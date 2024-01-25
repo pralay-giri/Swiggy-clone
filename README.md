@@ -1,0 +1,26 @@
+-   -   App
+-           -headding
+-               -logo
+-               -location
+-               -search
+-               -offers
+-               -help
+-               -sign in
+-               -cart
+-           -body
+-               -headding
+-               -filter
+-               -cards
+-                  -image
+-                  -offers (optiona)
+-                  -name
+-                  -rating
+-                  -time
+-                  -cusignins
+-                  -area name
+-           -footer
+-               -logo
+-               -company
+-               -contact us
+-               -legal
+-               -we deliver to

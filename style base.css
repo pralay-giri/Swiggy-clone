@@ -1,0 +1,536 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--theam-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
+    color: var(--base-color);
+}
+
+.headding {
+    display: flex;
+    position: fixed;
+    padding: 5px 10rem;
+    align-items: center;
+    justify-content: space-evenly;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 10px 15px rgba(154, 154, 154, 0.178);
+    z-index: 999;
+}
+
+.logo {
+    img {
+        width: 4rem;
+    }
+}
+
+.location {
+    position: relative;
+    margin-right: auto;
+    cursor: pointer;
+
+    .downbtn {
+        position: absolute;
+        top: 5px;
+        margin: 0 5px;
+        color: var(--theam-color);
+        font-weight: 600;
+    }
+
+    .city {
+        color: var(--base-deep-color);
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-bottom: 2px solid var(--base-deep-color);
+        margin: 2px;
+        transition: all 0.1s linear;
+    }
+
+    .address {
+        color: var(--base-deep-color);
+    }
+}
+
+.location:hover {
+    .city {
+        color: var(--theam-color);
+        border-color: initial;
+    }
+
+    .address {
+        color: var(--base-color);
+    }
+}
+
+.navlink {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    gap: 2rem;
+
+    li > a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        font-size: x-large;
+        text-decoration: none;
+        color: var(--base-deep-color);
+        font-size: 1.1rem;
+    }
+
+    .offer {
+        position: relative;
+    }
+
+    .offer::after {
+        position: absolute;
+        content: "new";
+        font-size: 10px;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-family: monospace;
+        top: -10px;
+        right: -15px;
+        color: var(--theam-color);
+    }
+
+    :is(:hover, :focus-visible) {
+        color: var(--theam-color);
+        outline-color: var(--theam-color);
+    }
+
+    .navicons {
+        font-size: larger;
+    }
+
+    .signin {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+}
+
+.body {
+    display: flex;
+    position: relative;
+    margin: 5rem auto;
+    width: 70vw;
+    min-height: 100vh;
+    flex-direction: column;
+
+    .recipes-container {
+        overflow: hidden;
+        position: relative;
+        &::after {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            left: 50%;
+            height: 1px;
+            width: 70%;
+            transform: translateX(-50%);
+            background-color: #f0f0f0;
+        }
+
+        .recipes-headers {
+            margin: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .recipes-btns > button {
+                position: relative;
+                cursor: pointer;
+                color: var(--base-color);
+                background-color: transparent;
+                border: none;
+                outline: none;
+                margin-right: 2px;
+                background-color: #dddddd;
+                padding: 0.7rem;
+                font-weight: 200;
+                align-items: center;
+                border-radius: 50%;
+                transition: all 0.2s linear;
+                &:hover {
+                    opacity: 0.8;
+                }
+
+                & > * {
+                    display: flex;
+                    margin: auto;
+                }
+            }
+            .recipes-btns > button:disabled {
+                pointer-events: none;
+                opacity: 0.5;
+            }
+        }
+        .recipes-wraper {
+            display: flex;
+            overflow: scroll hidden;
+        }
+        .recipes-wraper::-webkit-scrollbar {
+            height: 0px;
+        }
+
+        .recipe {
+            margin: 5px;
+            img {
+                width: 144px;
+                height: 180px;
+                object-fit: cover;
+                object-position: center;
+            }
+            &:focus-visible {
+                outline: 1px solid var(--theam-color);
+            }
+        }
+    }
+
+    .top-restaurents {
+        overflow: hidden;
+        position: relative;
+
+        .title {
+            font-size: x-large;
+            color: var(--base-deep-color);
+            font-weight: 700;
+            font-size: 25px;
+            padding: 0.7rem;
+            margin: 10px 0;
+            color: var(--base-color);
+        }
+
+        .restaurents {
+            position: relative;
+            display: flex;
+            overflow-x: scroll;
+            padding: 10px;
+            a {
+                text-decoration: none;
+                color: inherit;
+                &:focus-visible {
+                    outline: 1px solid var(--theam-color);
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+
+    .restaurent-container {
+        .title {
+            font-size: x-large;
+            color: var(--base-deep-color);
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        .filter {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+
+            span {
+                width: inherit;
+                border: 1px solid var(--base-color);
+                border-radius: 25px;
+                padding: 8px;
+                cursor: pointer;
+                font-size: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+            }
+        }
+
+        .rastaurents {
+            display: flex;
+            flex-wrap: wrap;
+            a {
+                text-decoration: none;
+                color: inherit;
+                &:focus-visible {
+                    outline: 1px solid var(--theam-color);
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+    .card {
+        width: 260px;
+        height: auto;
+        padding: 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: scale 0.1s linear;
+
+        .image {
+            border-radius: 10px;
+        }
+
+        .image > img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-position: center;
+            object-fit: cover;
+            aspect-ratio: 16/10;
+        }
+
+        .name {
+            font-size: 18px;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .info {
+            display: flex;
+            align-items: center;
+
+            .star {
+                font-size: 20px;
+                color: green;
+            }
+
+            .avgRatingString {
+                position: relative;
+            }
+
+            .avgRatingString::after {
+                content: " • ";
+                inset: 0;
+            }
+
+            .deliveryTime {
+                padding-left: 5px;
+            }
+        }
+
+        .cuisines,
+        .locality {
+            font-size: 15px;
+            font-weight: 200;
+            color: #707070;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        &:hover {
+            scale: 0.9;
+        }
+    }
+}
+
+.resetaurent-info {
+    margin: 100px auto;
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 2rem;
+
+    .branding {
+        text-align: left;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+            font-weight: 700;
+            padding: 10px 0;
+        }
+
+        .copywrite {
+            color: var(--footer-text-color);
+            padding: 5px;
+        }
+    }
+
+    .company,
+    .contact,
+    .delivery {
+        ul {
+            list-style-type: none;
+
+            li {
+                padding: 8px 0;
+                font-size: 15px;
+
+                a {
+                    text-decoration: none;
+                    color: var(--footer-text-color);
+                }
+
+                a:focuse-visible {
+                    outline: 1px solid var(--footer-text-color);
+                }
+
+                a:hover {
+                    border-bottom: 2px solid var(--theam-color);
+                }
+
+                .title {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+.shimmer-container {
+    display: flex;
+    position: relative;
+    margin: 100px auto;
+    align-items: center;
+    justify-content: flex-start;
+    width: 70vw;
+    flex-wrap: wrap;
+
+    /* .title {
+        position: relative;
+        width: 100%;
+        height: 100px;
+        transition: all .2s linear;
+        animation: animate 1s linear infinite;
+        animation-delay: 1ms;
+    }
+
+    .title::after,
+    .title::before {
+        position: absolute;
+        content: "";
+        top: 20px;
+        border-radius: 10px;
+        width: 47%;
+        height: 30px;
+        background-color: #f0f0f0;
+    }
+
+    .title::before {
+        top: 60px;
+        width: 70%;
+        height: 20px;
+    } */
+
+    .shimmer-card {
+        width: 220px;
+        height: 237px;
+        margin: 5px;
+        transition: all 0.2s linear;
+        animation: animate 1s linear infinite;
+
+        .image-container {
+            width: 100%;
+            height: 150px;
+            background-color: #f0f0f0;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        .description {
+            position: relative;
+            width: 90%;
+            height: 25px;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+        }
+
+        .description::after {
+            position: absolute;
+            content: "";
+            top: 30px;
+            width: 70%;
+            height: 20px;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+        }
+    }
+}
+
+@keyframes animate {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.error-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+
+    .error-status {
+        font-size: 5rem;
+        color: var(--base-color);
+    }
+
+    .error-text {
+        font-size: 2rem;
+    }
+
+    .error-message {
+        font-size: 1rem;
+    }
+}
+
+.cart-container,
+.offer-container,
+.support-container {
+    margin-top: 100px;
+    min-height: 70vh;
+}
+
+.offline-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #f0f0f0;
+    color: var(--base-color);
+    min-height: 80vh;
+    transition: all 0.2s linear;
+    p {
+        color: var(--base-color);
+    }
+}

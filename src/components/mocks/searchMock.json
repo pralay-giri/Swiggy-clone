@@ -1,0 +1,239 @@
+{
+    "query": "burger",
+    "suggestions": [
+        {
+            "text": "Burger",
+            "highlightedText": "{{Burger}}",
+            "type": "DISH",
+            "suggestionType": "SUGGESTION_TYPE_LOW_CONFIDENCE",
+            "marketplace": {
+                "marketplaceId": "SWIGGY",
+                "businessLineId": "FOOD"
+            },
+            "tagToDisplay": "Dish",
+            "cloudinaryId": "ac6cd19ec0940e13058d1646e6837915",
+            "tagToDisplayColor": "#686B78",
+            "metadata": "{\"type\":\"DISH\",\"data\":{\"vegIdentifier\":\"VEG\",\"cloudinaryId\":\"ac6cd19ec0940e13058d1646e6837915\",\"dishFamilyId\":\"846649\",\"dishFamilyIds\":[\"846649\"]},\"businessCategory\":\"SWIGGY_FOOD\",\"displayLabel\":\"Dish\"}",
+            "cta": {
+                "text": "Burger",
+                "type": "DEEPLINK",
+                "link": "swiggy://explore?query=Burger&metadata=%7B%22type%22%3A%22DISH%22%2C%22data%22%3A%7B%22vegIdentifier%22%3A%22VEG%22%2C%22cloudinaryId%22%3A%22ac6cd19ec0940e13058d1646e6837915%22%2C%22dishFamilyId%22%3A%22846649%22%2C%22dishFamilyIds%22%3A%5B%22846649%22%5D%7D%2C%22businessCategory%22%3A%22SWIGGY_FOOD%22%2C%22displayLabel%22%3A%22Dish%22%7D&marketplace=%7B%22marketplaceId%22%3A%22SWIGGY%22%2C%22businessLineId%22%3A%22FOOD%22%7D"
+            },
+            "category": "Food",
+            "categoryColor": "#686B78",
+            "subCategory": "Dish",
+            "subCategoryColor": "#686B78"
+        },
+        {
+            "text": "Burger King",
+            "highlightedText": "{{Burger}} King",
+            "type": "RESTAURANT",
+            "suggestionType": "SUGGESTION_TYPE_LOW_CONFIDENCE",
+            "marketplace": {
+                "marketplaceId": "SWIGGY",
+                "businessLineId": "FOOD"
+            },
+            "tagToDisplay": "Restaurant",
+            "tagToDisplayColor": "#686B78",
+            "cloudinaryId": "e33e1d3ba7d6b2bb0d45e1001b731fcf",
+            "metadata": "{\"type\":\"RESTAURANT\",\"data\":{\"parentId\":166,\"primaryRestaurantId\":194159,\"cloudinaryId\":\"e33e1d3ba7d6b2bb0d45e1001b731fcf\",\"brandId\":166,\"dishFamilyId\":\"846649\",\"enabled_flag\":1},\"businessCategory\":\"SWIGGY_FOOD\",\"displayLabel\":\"Restaurant\"}",
+            "cta": {
+                "text": "Burger King",
+                "type": "DEEPLINK",
+                "link": "swiggy://explore?query=Burger%20King&metadata=%7B%22type%22%3A%22RESTAURANT%22%2C%22data%22%3A%7B%22parentId%22%3A166%2C%22primaryRestaurantId%22%3A194159%2C%22cloudinaryId%22%3A%22e33e1d3ba7d6b2bb0d45e1001b731fcf%22%2C%22brandId%22%3A166%2C%22dishFamilyId%22%3A%22846649%22%2C%22enabled_flag%22%3A1%7D%2C%22businessCategory%22%3A%22SWIGGY_FOOD%22%2C%22displayLabel%22%3A%22Restaurant%22%7D&marketplace=%7B%22marketplaceId%22%3A%22SWIGGY%22%2C%22businessLineId%22%3A%22FOOD%22%7D"
+            },
+            "category": "Food",
+            "categoryColor": "#686B78",
+            "subCategory": "Restaurant",
+            "subCategoryColor": "#686B78",
+            "disabled": false
+        },
+        {
+            "text": "Burger Singh (Big Punjabi Burgers)",
+            "highlightedText": "{{Burger}} Singh (Big Punjabi Burgers)",
+            "type": "RESTAURANT",
+            "suggestionType": "SUGGESTION_TYPE_LOW_CONFIDENCE",
+            "marketplace": {
+                "marketplaceId": "SWIGGY",
+                "businessLineId": "FOOD"
+            },
+            "tagToDisplay": "Restaurant",
+            "tagToDisplayColor": "#686B78",
+            "cloudinaryId": "63a5569f00995b064bfd054f3941592b",
+            "metadata": "{\"type\":\"RESTAURANT\",\"data\":{\"parentId\":375065,\"primaryRestaurantId\":728292,\"cloudinaryId\":\"63a5569f00995b064bfd054f3941592b\",\"brandId\":375065,\"dishFamilyId\":\"846649\",\"enabled_flag\":1},\"businessCategory\":\"SWIGGY_FOOD\",\"displayLabel\":\"Restaurant\"}",
+            "cta": {
+                "text": "Burger Singh (Big Punjabi Burgers)",
+                "type": "DEEPLINK",
+                "link": "swiggy://explore?query=Burger%20Singh%20%28Big%20Punjabi%20Burgers%29&metadata=%7B%22type%22%3A%22RESTAURANT%22%2C%22data%22%3A%7B%22parentId%22%3A375065%2C%22primaryRestaurantId%22%3A728292%2C%22cloudinaryId%22%3A%2263a5569f00995b064bfd054f3941592b%22%2C%22brandId%22%3A375065%2C%22dishFamilyId%22%3A%22846649%22%2C%22enabled_flag%22%3A1%7D%2C%22businessCategory%22%3A%22SWIGGY_FOOD%22%2C%22displayLabel%22%3A%22Restaurant%22%7D&marketplace=%7B%22marketplaceId%22%3A%22SWIGGY%22%2C%22businessLineId%22%3A%22FOOD%22%7D"
+            },
+            "category": "Food",
+            "categoryColor": "#686B78",
+            "subCategory": "Restaurant",
+            "subCategoryColor": "#686B78",
+            "disabled": false
+        },
+        {
+            "text": "Chicken Burger",
+            "highlightedText": "Chicken {{Burger}}",
+            "type": "DISH",
+            "suggestionType": "SUGGESTION_TYPE_LOW_CONFIDENCE",
+            "marketplace": {
+                "marketplaceId": "SWIGGY",
+                "businessLineId": "FOOD"
+            },
+            "tagToDisplay": "Dish",
+            "cloudinaryId": "uxtq51dqe2r0jtkv2o6l",
+            "tagToDisplayColor": "#686B78",
+            "metadata": "{\"type\":\"DISH\",\"data\":{\"vegIdentifier\":\"NONVEG\",\"cloudinaryId\":\"uxtq51dqe2r0jtkv2o6l\",\"dishFamilyId\":\"846649\",\"dishTypeId\":\"847565\",\"dishFamilyIds\":[\"846649\"],\"dishTypeIds\":[\"847565\"]},\"businessCategory\":\"SWIGGY_FOOD\",\"displayLabel\":\"Dish\"}",
+            "cta": {
+                "text": "Chicken Burger",
+                "type": "DEEPLINK",
+                "link": "swiggy://explore?query=Chicken%20Burger&metadata=%7B%22type%22%3A%22DISH%22%2C%22data%22%3A%7B%22vegIdentifier%22%3A%22NONVEG%22%2C%22cloudinaryId%22%3A%22uxtq51dqe2r0jtkv2o6l%22%2C%22dishFamilyId%22%3A%22846649%22%2C%22dishTypeId%22%3A%22847565%22%2C%22dishFamilyIds%22%3A%5B%22846649%22%5D%2C%22dishTypeIds%22%3A%5B%22847565%22%5D%7D%2C%22businessCategory%22%3A%22SWIGGY_FOOD%22%2C%22displayLabel%22%3A%22Dish%22%7D&marketplace=%7B%22marketplaceId%22%3A%22SWIGGY%22%2C%22businessLineId%22%3A%22FOOD%22%7D"
+            },
+            "category": "Food",
+            "categoryColor": "#686B78",
+            "subCategory": "Dish",
+            "subCategoryColor": "#686B78"
+        },
+        {
+            "text": "Burger In Law",
+            "highlightedText": "{{Burger}} In Law",
+            "type": "RESTAURANT",
+            "suggestionType": "SUGGESTION_TYPE_LOW_CONFIDENCE",
+            "marketplace": {
+                "marketplaceId": "SWIGGY",
+                "businessLineId": "FOOD"
+            },
+            "tagToDisplay": "Restaurant",
+            "tagToDisplayColor": "#686B78",
+            "cloudinaryId": "xcidaxubb5lkxnwbzq6q",
+            "metadata": "{\"type\":\"RESTAURANT\",\"data\":{\"parentId\":7451,\"primaryRestaurantId\":54319,\"cloudinaryId\":\"xcidaxubb5lkxnwbzq6q\",\"brandId\":7451,\"dishFamilyId\":\"846649\",\"enabled_flag\":1},\"businessCategory\":\"SWIGGY_FOOD\",\"displayLabel\":\"Restaurant\"}",
+            "cta": {
+                "text": "Burger In Law",
+                "type": "DEEPLINK",
+                "link": "swiggy://explore?query=Burger%20In%20Law&metadata=%7B%22type%22%3A%22RESTAURANT%22%2C%22data%22%3A%7B%22parentId%22%3A7451%2C%22primaryRestaurantId%22%3A54319%2C%22cloudinaryId%22%3A%22xcidaxubb5lkxnwbzq6q%22%2C%22brandId%22%3A7451%2C%22dishFamilyId%22%3A%22846649%22%2C%22enabled_flag%22%3A1%7D%2C%22businessCategory%22%3A%22SWIGGY_FOOD%22%2C%22displayLabel%22%3A%22Restaurant%22%7D&marketplace=%7B%22marketplaceId%22%3A%22SWIGGY%22%2C%22businessLineId%22%3A%22FOOD%22%7D"
+            },
+            "category": "Food",
+            "categoryColor": "#686B78",
+            "subCategory": "Restaurant",
+            "subCategoryColor": "#686B78",
+            "disabled": false
+        },
+        {
+            "text": "Veg Burger",
+            "highlightedText": "Veg {{Burger}}",
+            "type": "DISH",
+            "suggestionType": "SUGGESTION_TYPE_LOW_CONFIDENCE",
+            "marketplace": {
+                "marketplaceId": "SWIGGY",
+                "businessLineId": "FOOD"
+            },
+            "tagToDisplay": "Dish",
+            "cloudinaryId": "48b005e5e8502df61a5af6419b67664b",
+            "tagToDisplayColor": "#686B78",
+            "metadata": "{\"type\":\"DISH\",\"data\":{\"vegIdentifier\":\"VEG\",\"cloudinaryId\":\"48b005e5e8502df61a5af6419b67664b\",\"dishFamilyId\":\"846649\",\"dishTypeId\":\"847558\",\"dishFamilyIds\":[\"846649\"],\"dishTypeIds\":[\"847558\"]},\"businessCategory\":\"SWIGGY_FOOD\",\"displayLabel\":\"Dish\"}",
+            "cta": {
+                "text": "Veg Burger",
+                "type": "DEEPLINK",
+                "link": "swiggy://explore?query=Veg%20Burger&metadata=%7B%22type%22%3A%22DISH%22%2C%22data%22%3A%7B%22vegIdentifier%22%3A%22VEG%22%2C%22cloudinaryId%22%3A%2248b005e5e8502df61a5af6419b67664b%22%2C%22dishFamilyId%22%3A%22846649%22%2C%22dishTypeId%22%3A%22847558%22%2C%22dishFamilyIds%22%3A%5B%22846649%22%5D%2C%22dishTypeIds%22%3A%5B%22847558%22%5D%7D%2C%22businessCategory%22%3A%22SWIGGY_FOOD%22%2C%22displayLabel%22%3A%22Dish%22%7D&marketplace=%7B%22marketplaceId%22%3A%22SWIGGY%22%2C%22businessLineId%22%3A%22FOOD%22%7D"
+            },
+            "category": "Food",
+            "categoryColor": "#686B78",
+            "subCategory": "Dish",
+            "subCategoryColor": "#686B78"
+        },
+        {
+            "text": "Patty Burger",
+            "highlightedText": "Patty {{Burger}}",
+            "type": "DISH",
+            "suggestionType": "SUGGESTION_TYPE_LOW_CONFIDENCE",
+            "marketplace": {
+                "marketplaceId": "SWIGGY",
+                "businessLineId": "FOOD"
+            },
+            "tagToDisplay": "Dish",
+            "cloudinaryId": "bzfywxdvmkafjsakvhye",
+            "tagToDisplayColor": "#686B78",
+            "metadata": "{\"type\":\"DISH\",\"data\":{\"vegIdentifier\":\"NA\",\"cloudinaryId\":\"bzfywxdvmkafjsakvhye\",\"dishFamilyId\":\"846649\",\"dishPreparationStyleId\":\"849362\",\"dishFamilyIds\":[\"846649\"],\"dishPreparationStyleIds\":[\"849362\"]},\"businessCategory\":\"SWIGGY_FOOD\",\"displayLabel\":\"Dish\"}",
+            "cta": {
+                "text": "Patty Burger",
+                "type": "DEEPLINK",
+                "link": "swiggy://explore?query=Patty%20Burger&metadata=%7B%22type%22%3A%22DISH%22%2C%22data%22%3A%7B%22vegIdentifier%22%3A%22NA%22%2C%22cloudinaryId%22%3A%22bzfywxdvmkafjsakvhye%22%2C%22dishFamilyId%22%3A%22846649%22%2C%22dishPreparationStyleId%22%3A%22849362%22%2C%22dishFamilyIds%22%3A%5B%22846649%22%5D%2C%22dishPreparationStyleIds%22%3A%5B%22849362%22%5D%7D%2C%22businessCategory%22%3A%22SWIGGY_FOOD%22%2C%22displayLabel%22%3A%22Dish%22%7D&marketplace=%7B%22marketplaceId%22%3A%22SWIGGY%22%2C%22businessLineId%22%3A%22FOOD%22%7D"
+            },
+            "category": "Food",
+            "categoryColor": "#686B78",
+            "subCategory": "Dish",
+            "subCategoryColor": "#686B78"
+        },
+        {
+            "text": "Mac Burger",
+            "highlightedText": "Mac {{Burger}}",
+            "type": "DISH",
+            "suggestionType": "SUGGESTION_TYPE_LOW_CONFIDENCE",
+            "marketplace": {
+                "marketplaceId": "SWIGGY",
+                "businessLineId": "FOOD"
+            },
+            "tagToDisplay": "Dish",
+            "cloudinaryId": "n9bkfix37ohwikvjlzyg",
+            "tagToDisplayColor": "#686B78",
+            "metadata": "{\"type\":\"DISH\",\"data\":{\"vegIdentifier\":\"NA\",\"cloudinaryId\":\"n9bkfix37ohwikvjlzyg\",\"dishPreparationStyleIds\":[\"2c2ef722-8edb-4a8a-b2f8-b043d8d32f2d\"]},\"businessCategory\":\"SWIGGY_FOOD\",\"displayLabel\":\"Dish\"}",
+            "cta": {
+                "text": "Mac Burger",
+                "type": "DEEPLINK",
+                "link": "swiggy://explore?query=Mac%20Burger&metadata=%7B%22type%22%3A%22DISH%22%2C%22data%22%3A%7B%22vegIdentifier%22%3A%22NA%22%2C%22cloudinaryId%22%3A%22n9bkfix37ohwikvjlzyg%22%2C%22dishPreparationStyleIds%22%3A%5B%222c2ef722-8edb-4a8a-b2f8-b043d8d32f2d%22%5D%7D%2C%22businessCategory%22%3A%22SWIGGY_FOOD%22%2C%22displayLabel%22%3A%22Dish%22%7D&marketplace=%7B%22marketplaceId%22%3A%22SWIGGY%22%2C%22businessLineId%22%3A%22FOOD%22%7D"
+            },
+            "category": "Food",
+            "categoryColor": "#686B78",
+            "subCategory": "Dish",
+            "subCategoryColor": "#686B78"
+        },
+        {
+            "text": "Burger N Fried",
+            "highlightedText": "{{Burger}} N Fried",
+            "type": "RESTAURANT",
+            "suggestionType": "SUGGESTION_TYPE_LOW_CONFIDENCE",
+            "marketplace": {
+                "marketplaceId": "SWIGGY",
+                "businessLineId": "FOOD"
+            },
+            "tagToDisplay": "Restaurant",
+            "tagToDisplayColor": "#686B78",
+            "cloudinaryId": "hagaxlw9m0gtk4ygho0t",
+            "metadata": "{\"type\":\"RESTAURANT\",\"data\":{\"parentId\":51394,\"primaryRestaurantId\":81327,\"cloudinaryId\":\"hagaxlw9m0gtk4ygho0t\",\"brandId\":51394,\"dishFamilyId\":\"846649\",\"enabled_flag\":1},\"businessCategory\":\"SWIGGY_FOOD\",\"displayLabel\":\"Restaurant\"}",
+            "cta": {
+                "text": "Burger N Fried",
+                "type": "DEEPLINK",
+                "link": "swiggy://explore?query=Burger%20N%20Fried&metadata=%7B%22type%22%3A%22RESTAURANT%22%2C%22data%22%3A%7B%22parentId%22%3A51394%2C%22primaryRestaurantId%22%3A81327%2C%22cloudinaryId%22%3A%22hagaxlw9m0gtk4ygho0t%22%2C%22brandId%22%3A51394%2C%22dishFamilyId%22%3A%22846649%22%2C%22enabled_flag%22%3A1%7D%2C%22businessCategory%22%3A%22SWIGGY_FOOD%22%2C%22displayLabel%22%3A%22Restaurant%22%7D&marketplace=%7B%22marketplaceId%22%3A%22SWIGGY%22%2C%22businessLineId%22%3A%22FOOD%22%7D"
+            },
+            "category": "Food",
+            "categoryColor": "#686B78",
+            "subCategory": "Restaurant",
+            "subCategoryColor": "#686B78",
+            "disabled": false
+        },
+        {
+            "text": "Zinger Burger",
+            "highlightedText": "Zinger {{Burger}}",
+            "type": "DISH",
+            "suggestionType": "SUGGESTION_TYPE_LOW_CONFIDENCE",
+            "marketplace": {
+                "marketplaceId": "SWIGGY",
+                "businessLineId": "FOOD"
+            },
+            "tagToDisplay": "Dish",
+            "cloudinaryId": "ki6enhbsj4nlpux4rpfb",
+            "tagToDisplayColor": "#686B78",
+            "metadata": "{\"type\":\"DISH\",\"data\":{\"vegIdentifier\":\"NONVEG\",\"cloudinaryId\":\"ki6enhbsj4nlpux4rpfb\",\"dishFamilyId\":\"846649\",\"dishFamilyIds\":[\"846649\"],\"dishPreparationStyleIds\":[\"2f93a7a1-bc19-458f-83db-c403474499e7\"]},\"businessCategory\":\"SWIGGY_FOOD\",\"displayLabel\":\"Dish\"}",
+            "cta": {
+                "text": "Zinger Burger",
+                "type": "DEEPLINK",
+                "link": "swiggy://explore?query=Zinger%20Burger&metadata=%7B%22type%22%3A%22DISH%22%2C%22data%22%3A%7B%22vegIdentifier%22%3A%22NONVEG%22%2C%22cloudinaryId%22%3A%22ki6enhbsj4nlpux4rpfb%22%2C%22dishFamilyId%22%3A%22846649%22%2C%22dishFamilyIds%22%3A%5B%22846649%22%5D%2C%22dishPreparationStyleIds%22%3A%5B%222f93a7a1-bc19-458f-83db-c403474499e7%22%5D%7D%2C%22businessCategory%22%3A%22SWIGGY_FOOD%22%2C%22displayLabel%22%3A%22Dish%22%7D&marketplace=%7B%22marketplaceId%22%3A%22SWIGGY%22%2C%22businessLineId%22%3A%22FOOD%22%7D"
+            },
+            "category": "Food",
+            "categoryColor": "#686B78",
+            "subCategory": "Dish",
+            "subCategoryColor": "#686B78"
+        }
+    ]
+}

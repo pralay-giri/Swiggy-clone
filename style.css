@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+
+.navLink {
+    @apply flex items-center gap-[3px] hover:text-orange-400 hover:transition-colors;
+}
+
+:root {
+    --gradient-color: white;
+    --bg-color: var(--base-deep-color);
+}
+
+.dark {
+    --gradient-color: white;
+    --gradient-color: var(--base-deep-color);
+    --bg-color: white;
+}
+
+.outerDiv {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border-radius: 50%;
+    overflow: hidden;
+    &::after {
+        position: absolute;
+        content: "";
+        inset: -50;
+        border-radius: 50%;
+
+        background-image: conic-gradient(
+            transparent,
+            transparent,
+            transparent,
+            var(--gradient-color)
+        );
+        animation: animate 0.7s linear infinite;
+    }
+    .innerDiv {
+        position: absolute;
+        border-radius: 50%;
+        inset: 5;
+        z-index: 9;
+        background-color: var(--bg-color);
+        .inner-item {
+            color: var(--gradient-color);
+        }
+    }
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --base-color: #3d4152;
+        --base-deep-color: #26272c;
+        --theam-color: #fc8019;
+        --footer-text-color: rgb(165, 165, 165);
+    }
+}
