@@ -37,7 +37,7 @@ export default Card;
 export const withPromoted = (card) => {
     // card is the actual component as an argument
     // its return's a new component with modifying the Card component
-    return (PromotedComp = (props) => {
+    return ((props) => {
         return (
             <div className="bg-[#f0f0f0]">
                 <Card {...props} />
