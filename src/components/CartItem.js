@@ -2,34 +2,44 @@ import React, { useEffect, useState } from "react";
 import { LuIndianRupee } from "react-icons/lu";
 import { RESTAURENT_CATEGORY_IMAGE_CDN } from "../utils/constants";
 import { useDispatch } from "react-redux";
-import { removeItem } from "../redux/slices/cartSlice";
+import {
+    removeItem,
+    incressNumberOfItem,
+    decressNumberOfItem,
+} from "../redux/slices/cartSlice";
 
 const CartItem = (props) => {
-    const { cart, setToPay } = props;
-    const [qty, setQty] = useState(1);
-    const { name, price, id, description, imageId } = cart?.card?.info;
+    const { cart, setToPay, count } = props;
+    const [qty, setQty] = useState(count);
+    const { name, price, id, description, imageId, defaultPrice } =
+        cart?.card?.info;
 
     const dispatch = useDispatch();
 
     const handleDecremtnt = () => {
+        const priceInRs = (price ?? defaultPrice) / 100;
         if (qty === 1) {
             dispatch(removeItem(id));
         } else {
             setQty((prev) => --prev);
+            dispatch(decressNumberOfItem(id));
         }
         setToPay((prev) => {
-            return (prev -= price / 100);
+            return (prev -= priceInRs);
         });
     };
 
     const handleIncrement = () => {
+        const priceInRs = (price ?? defaultPrice) / 100;
         setQty((prev) => ++prev);
-        setToPay((prev) => (prev += price / 100));
+        setToPay((prev) => (prev += priceInRs));
+        dispatch(incressNumberOfItem(id));
     };
 
     const handleDelete = () => {
+        const priceInRs = (price ?? defaultPrice) / 100;
         setToPay((prev) => {
-            return (prev -= price / 100);
+            return (prev -= priceInRs * qty);
         });
         dispatch(removeItem(id));
     };
@@ -51,7 +61,7 @@ const CartItem = (props) => {
                 <p className="text-xl font-semibold">{name}</p>
                 <p className="flex items-center gap-1">
                     <LuIndianRupee />
-                    {price / 100}
+                    {(price ?? defaultPrice) / 100}
                 </p>
                 <p className="text-sm text-gray-400 dark:group-hover:text-gray-800  w-10/12">
                     {description}

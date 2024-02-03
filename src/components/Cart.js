@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
 import { LuIndianRupee } from "react-icons/lu";
-// const emptyCart = require("../media/emptyCart.png");
 import { clearCart } from "../redux/slices/cartSlice";
 import { useDispatch } from "react-redux";
 import { EMPTY_CART_IMAGE } from "../utils/constants";
@@ -35,16 +34,21 @@ const CearCartModal = ({ closeModal, clearCart }) => {
 };
 
 const Cart = () => {
-    const cart = useSelector((store) => store.cart.cartItems);
+    const carts = useSelector((store) => store.cart.cartItems);
     const dispatch = useDispatch();
 
     const [toPay, setToPay] = useState(() => {
         let total = 0;
-        cart.forEach((element) => {
-            total += element?.card?.info?.price / 100;
+        carts.forEach((cart) => {
+            total +=
+                ((cart?.card?.card?.info?.price ??
+                    cart?.card?.card?.info?.defaultPrice) /
+                    100) *
+                cart.count;
         });
         return total;
     });
+
     const [clearCartModal, setClearCartMOdal] = useState(false);
 
     const handleClearCart = () => {
@@ -55,9 +59,9 @@ const Cart = () => {
         <div className="w-7/12 mx-auto my-4 dark:text-white">
             <div className=" flex items-center justify-between border-b-4 pb-2 mb-2">
                 <p className="text-4xl font-semibold">My cart</p>
-                <p>Total {cart.length} items</p>
+                <p>Total {carts.length} items</p>
             </div>
-            {cart.length === 0 ? (
+            {carts.length === 0 ? (
                 <div className="text-center p-10 *:my-3 ">
                     <div className="flex justify-center">
                         <img src={EMPTY_CART_IMAGE} alt="empty cart" />
@@ -71,11 +75,12 @@ const Cart = () => {
                 </div>
             ) : (
                 <div className="*:my-10 *:border-b-2">
-                    {cart.map((item, index) => {
+                    {carts.map((item, index) => {
                         return (
                             <CartItem
-                                cart={item}
-                                key={item.card.info.id}
+                                cart={item.card}
+                                key={item.card.card.info.id}
+                                count={Number(item.count)}
                                 setToPay={setToPay}
                             />
                         );
@@ -86,7 +91,7 @@ const Cart = () => {
                 <div className="">
                     <button
                         className="border px-2 py-1 bg-orange-400 text-white text-lg font-semibold rounded-md disabled:bg-orange-300 disabled:hover:opacity-100 hover:opacity-90"
-                        disabled={cart.length ? false : true}
+                        disabled={carts.length ? false : true}
                         onClick={handleClearCart}
                     >
                         clear Cart
@@ -100,7 +105,7 @@ const Cart = () => {
                     </div>
                     <button
                         className="border px-2 py-1 bg-green-400 text-white text-lg font-semibold rounded-md disabled:bg-green-300 disabled:hover:opacity-100 hover:opacity-90"
-                        disabled={cart.length ? false : true}
+                        disabled={carts.length ? false : true}
                     >
                         check out
                     </button>

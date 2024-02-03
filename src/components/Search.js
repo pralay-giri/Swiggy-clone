@@ -11,7 +11,14 @@ const Search = () => {
     const [showAllResult, setShowAllResult] = useState(false);
     const inputRef = useRef(null);
 
-    const { searchData, isLoadding } = useSearcHook(searchQuery);
+    const { handleQueryChange, searchData, isLoadding } =
+        useSearcHook(searchQuery);
+
+    const handleSearch = (e) => {
+        setSearchQuery(e.target.value);
+        handleQueryChange(e);
+    };
+
     return (
         <div className="max-w-[65%] min-h-[100vh] mx-auto p-10 dark:text-white">
             <div className="mb-2 flex items-center w-[100%] border border-[#adadad] rounded-md overflow-hidden focus-within:shadow-md">
@@ -26,7 +33,7 @@ const Search = () => {
                     className="w-full h-[100%] text-lg text-[var(--base-color)] focus-visible:outline-none py-2 px-2"
                     value={searchQuery}
                     type="text"
-                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onChange={handleSearch}
                     ref={inputRef}
                     placeholder="search dish or restaurent"
                 />

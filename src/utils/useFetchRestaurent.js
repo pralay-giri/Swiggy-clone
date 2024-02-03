@@ -15,7 +15,6 @@ const useFetchRestaurent = (restaurentId) => {
             setRestaurentData(cards);
             setIsLoadding(false);
         } catch (error) {
-            console.log(error);
             setIsLoadding(false);
         }
     };

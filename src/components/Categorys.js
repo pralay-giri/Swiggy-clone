@@ -4,12 +4,19 @@ import { TbSquareDot } from "react-icons/tb";
 import { RESTAURENT_CATEGORY_IMAGE_CDN } from "../utils/constants";
 import { LuIndianRupee } from "react-icons/lu";
 import { useDispatch } from "react-redux";
-import { addItem } from "../redux/slices/cartSlice";
+import {
+    addItem,
+    incressNumberOfItem,
+    decressNumberOfItem,
+    removeItem,
+} from "../redux/slices/cartSlice";
 
 const Categorys = (props) => {
+    const dispatch = useDispatch();
     const { data } = props;
 
     const name = data?.card?.info?.name;
+    const id = data?.card?.info?.id;
     const price = data?.card?.info?.price;
     const defaultPrice = data?.card?.info?.defaultPrice;
     const description = data?.card?.info?.description;
@@ -18,10 +25,24 @@ const Categorys = (props) => {
     const ribbon = data?.card?.info?.ribbon?.text;
 
     const [AddedItem, setAddedItem] = useState(0);
-    const dispatch = useDispatch();
 
     const handleAdd = () => {
-        dispatch(addItem(data));
+        dispatch(addItem({ card: data, count: AddedItem + 1 }));
+        setAddedItem((prev) => prev + 1);
+    };
+
+    const handleIncressItem = () => {
+        dispatch(incressNumberOfItem(id));
+        setAddedItem((prev) => prev + 1);
+    };
+
+    const handleDecressItem = () => {
+        if (AddedItem === 1) {
+            removeItem(id);
+        } else {
+            dispatch(decressNumberOfItem(id));
+        }
+        setAddedItem((prev) => prev - 1);
     };
 
     return (
@@ -61,10 +82,7 @@ const Categorys = (props) => {
                 <div className="text-center absolute bottom-2 left-[50%] translate-x-[-50%] hover:opacity-95">
                     {AddedItem === 0 ? (
                         <button
-                            onClick={() => {
-                                setAddedItem((prev) => prev + 1);
-                                handleAdd();
-                            }}
+                            onClick={handleAdd}
                             className="px-8 py-2 text-sm border shadow-lg text-green-500 bg-white rounded-sm"
                             data-testid="addButton"
                         >
@@ -73,18 +91,14 @@ const Categorys = (props) => {
                     ) : (
                         <div className="w-auto felx items-center text-sm px-2 py-1 border shadow-lg text-green-500 bg-white rounded-sm">
                             <button
-                                onClick={() => {
-                                    setAddedItem((prev) => prev - 1);
-                                }}
+                                onClick={handleDecressItem}
                                 className="text-xl px-2"
                             >
                                 -
                             </button>
                             <span>{AddedItem}</span>
                             <button
-                                onClick={() => {
-                                    setAddedItem((prev) => prev + 1);
-                                }}
+                                onClick={handleIncressItem}
                                 className="text-xl px-2"
                             >
                                 +

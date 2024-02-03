@@ -22,7 +22,6 @@ const useFetchAllSearchResult = (query) => {
                 )
             );
         } catch (error) {
-            console.log(error);
             setIsError(error);
         } finally {
             setIsLoadding(false);
