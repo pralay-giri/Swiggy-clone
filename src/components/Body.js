@@ -20,7 +20,6 @@ import { withPromoted } from "./Card";
 
 const Body = () => {
     const SCROLL_LENGTH = 270;
-
     // fetching the required data
     const {
         recipes,

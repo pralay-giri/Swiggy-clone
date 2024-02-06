@@ -34,7 +34,6 @@ describe("Search compoent testing", () => {
         });
 
         const searchItem = screen.getAllByTestId("searchItem");
-        console.log(searchItem.length);
 
         // assertion or expection
         expect(searchItem.length).toBe(10);

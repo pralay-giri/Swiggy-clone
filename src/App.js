@@ -17,7 +17,7 @@ import Cart from "./components/Cart";
 const App = () => {
     return (
         <Provider store={appStore}>
-            <div className="dark:bg-black">
+            <div className="dark:bg-black overflow-x-hidden">
                 <Header />
                 <Outlet />
                 <Footer />

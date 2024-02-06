@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BiSolidOffer } from "react-icons/bi";
 import { BsChevronDown, BsListNested } from "react-icons/bs";
-import { CgProfile } from "react-icons/cg";
+import { CgProfile, CgUserList } from "react-icons/cg";
 import { CiShoppingCart } from "react-icons/ci";
 import { CiSearch } from "react-icons/ci";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
@@ -11,16 +11,65 @@ import { Link, NavLink } from "react-router-dom";
 import changeTheme from "../utils/changeTheme";
 import { GoDotFill } from "react-icons/go";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import {
+    setUserData,
+    toogleSignContainer,
+    removeUser,
+} from "../redux/slices/userSlice";
+import Authantication from "./Authantication";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../utils/firebase";
+import { DEFAULT_PROFILE } from "../utils/constants";
+import UserProfile from "./UserProfile";
 
 const Header = () => {
-    const [isThemeManuVisible, setIsThemeManuVisible] = useState(false);
-    const [signin, setSignIn] = useState("sign in");
-
-    // subscribing the slice
+    const dispatch = useDispatch();
     const cart = useSelector((store) => store.cart.cartItems);
+    const user = useSelector((store) => store.user);
+
+    const [isThemeManuVisible, setIsThemeManuVisible] = useState(false);
+    const [profileModal, setProfileModal] = useState(false);
+
+    const handleSignInClick = () => {
+        dispatch(toogleSignContainer());
+    };
+
+    useEffect(() => {
+        const listner = onAuthStateChanged(auth, (user) => {
+            if (user) {
+                const {
+                    displayName,
+                    email,
+                    phoneNumber,
+                    photoURL,
+                    uid,
+                    emailVerified,
+                } = auth.currentUser;
+                dispatch(
+                    setUserData({
+                        displayName,
+                        email,
+                        phoneNumber,
+                        photoURL,
+                        uid,
+                        emailVerified,
+                    })
+                );
+                dispatch(toogleSignContainer());
+            } else {
+                dispatch(removeUser());
+            }
+        });
+        return () => listner();
+    }, []);
+
+    const handleProfileClick = () => {
+        setProfileModal((prev) => !prev);
+    };
 
     return (
-        <div className="sticky z-[999] top-0 flex justify-between px-10 py-2 bg-white dark:border-b  shadow-lg items-center dark:bg-black dark:text-[#f0f0f0] transition-all">
+        <div className="sticky z-[10] top-0 flex justify-between px-10 py-2 bg-white dark:border-b  shadow-lg items-center dark:bg-black dark:text-[#f0f0f0] transition-all">
             <div className="w-16 mr-2">
                 <Link to="/">
                     <svg
@@ -145,39 +194,56 @@ const Header = () => {
                         <span>help</span>
                     </NavLink>
                 </li>
-                <li>
-                    <div className="navLink cursor-pointer">
-                        <CgProfile className="text-2xl" />
-                        <span
-                            onClick={() => {
-                                setSignIn((prev) => {
-                                    return prev === "sign in"
-                                        ? "log in"
-                                        : "sign in";
-                                });
-                            }}
+                {user.userData && (
+                    <li>
+                        <NavLink
+                            to="/checkout"
+                            className={({ isActive }) =>
+                                isActive ? "navLink text-orange-400" : "navLink"
+                            }
                         >
-                            {signin}
-                        </span>
-                    </div>
-                </li>
+                            <div className="relative">
+                                <span className="absolute -top-1 left-[50%] text-orange-500">
+                                    {cart.length !== 0 && <GoDotFill />}
+                                </span>
+                                <CiShoppingCart className="text-2xl" />
+                            </div>
+                            <span>cart</span>
+                        </NavLink>
+                    </li>
+                )}
                 <li>
-                    <NavLink
-                        to="/checkout"
-                        className={({ isActive }) =>
-                            isActive ? "navLink text-orange-400" : "navLink"
-                        }
-                    >
-                        <div className="relative">
-                            <span className="absolute -top-1 left-[50%] text-orange-500">
-                                {cart.length !== 0 && <GoDotFill />}
-                            </span>
-                            <CiShoppingCart className="text-2xl" />
+                    {user.userData ? (
+                        <div
+                            className="profile text-center w-10 h-10 border-2 border-gray-800 bg-gray-400 rounded-full overflow-hidden cursor-pointer"
+                            onClick={handleProfileClick}
+                        >
+                            <img
+                                src={
+                                    user?.userData?.photoURL || DEFAULT_PROFILE
+                                }
+                                alt="avtar"
+                                className="object-cover object-center"
+                            />
                         </div>
-                        <span>cart</span>
-                    </NavLink>
+                    ) : (
+                        <div
+                            className="navLink cursor-pointer"
+                            onClick={handleSignInClick}
+                        >
+                            <CgProfile className="text-2xl" />
+                            <span>sign in</span>
+                        </div>
+                    )}
                 </li>
             </ul>
+            {profileModal && (
+                <UserProfile
+                    user={user.userData}
+                    closeModal={() => setProfileModal((prev) => !prev)}
+                />
+            )}
+            {user.signInBtnToogle && <Authantication />}
         </div>
     );
 };

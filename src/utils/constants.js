@@ -50,3 +50,12 @@ export const FilterIcon = () => {
 
 export const EMPTY_CART_IMAGE =
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSASbSZgbOxruhNsu0o5-fajPoWLjIJCJL7yZbvcDDfnQihmBO";
+
+export const SIGNIN_LOGO_CDN =
+    "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/Image-login_btpq7r";
+
+export const REGX_FOR_MOBILE_DEVICE = /android|iphone|kindle|ipad/i;
+
+export const USER_AGENT = window.navigator.userAgent;
+export const DEFAULT_PROFILE =
+    "https://img.freepik.com/premium-vector/anonymous-user-circle-icon-vector-illustration-flat-style-with-long-shadow_520826-1931.jpg?w=740";

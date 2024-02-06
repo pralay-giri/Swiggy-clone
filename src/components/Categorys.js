@@ -10,9 +10,12 @@ import {
     decressNumberOfItem,
     removeItem,
 } from "../redux/slices/cartSlice";
+import { toogleSignContainer } from "../redux/slices/userSlice";
+import { useSelector } from "react-redux";
 
 const Categorys = (props) => {
     const dispatch = useDispatch();
+    const user = useSelector((state) => state.user.userData);
     const { data } = props;
 
     const name = data?.card?.info?.name;
@@ -27,16 +30,28 @@ const Categorys = (props) => {
     const [AddedItem, setAddedItem] = useState(0);
 
     const handleAdd = () => {
+        if (!user) {
+            dispatch(toogleSignContainer());
+            return;
+        }
         dispatch(addItem({ card: data, count: AddedItem + 1 }));
         setAddedItem((prev) => prev + 1);
     };
 
     const handleIncressItem = () => {
+        if (!user) {
+            dispatch(toogleSignContainer());
+            return;
+        }
         dispatch(incressNumberOfItem(id));
         setAddedItem((prev) => prev + 1);
     };
 
     const handleDecressItem = () => {
+        if (!user) {
+            dispatch(toogleSignContainer());
+            return;
+        }
         if (AddedItem === 1) {
             removeItem(id);
         } else {
